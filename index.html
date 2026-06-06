@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextStep | Student Growth Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow background-glow--left"></div>
+    <div class="background-glow background-glow--right"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span class="brand-mark">NextStep</span>
+        <span class="brand-subtitle">Student Growth Planner</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#why-built">About</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#assessment">Assessment</a>
+        <a href="#explorer">Explore</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#notes">Notes</a>
+        <a href="#assistant">Assistant</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Activate dark mode"
+        >
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span id="themeToggleLabel" class="theme-toggle-label">Light Mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <!-- Landing hero -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Student Growth Planner</p>
+          <h1>NextStep</h1>
+          <p class="tagline">Your Personalized Student Growth Planner</p>
+          <p class="hero-description">
+            NextStep helps university students turn uncertainty into a clear
+            growth plan with personalized guidance, saved progress, career
+            exploration tools, and action-focused preparation.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#dashboard">Open Dashboard</a>
+            <a class="secondary-button" href="#assessment">Take Assessment</a>
+          </div>
+        </div>
+
+        <div class="hero-panel card">
+          <p class="panel-label">What feels new now</p>
+          <div class="hero-highlights">
+            <article class="mini-card">
+              <h2>Personal Dashboard</h2>
+              <p>Save your student profile and see the focus that fits your semester.</p>
+            </article>
+            <article class="mini-card">
+              <h2>Action Timeline</h2>
+              <p>Get a semester-based plan that tells you what to work on next.</p>
+            </article>
+            <article class="mini-card">
+              <h2>Saved Favorites</h2>
+              <p>Bookmark careers, keep notes, and build a more intentional journey.</p>
+            </article>
+            <article class="mini-card">
+              <h2>Progress Rewards</h2>
+              <p>Unlock badges as your checklist moves from beginner to application-ready.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard -->
+      <section id="dashboard" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Dashboard</p>
+          <h2>See your student growth plan at a glance</h2>
+          <p>
+            Save your name, major, and semester to unlock a more personal
+            overview with focus guidance, progress indicators, and next-step
+            recommendations.
+          </p>
+        </div>
+
+        <div class="dashboard-layout">
+          <article class="card dashboard-form-card">
+            <p class="panel-label">Your profile</p>
+            <h3>Set up your dashboard</h3>
+            <p class="card-copy">
+              These details are stored in your browser so the app can welcome
+              you back with a more useful starting point.
+            </p>
+
+            <form id="profileForm" class="profile-form">
+              <label class="input-group" for="studentName">
+                <span>Name</span>
+                <input
+                  id="studentName"
+                  class="input-field"
+                  type="text"
+                  placeholder="Enter your name"
+                />
+              </label>
+
+              <label class="input-group" for="studentMajor">
+                <span>Major</span>
+                <input
+                  id="studentMajor"
+                  class="input-field"
+                  type="text"
+                  placeholder="Example: Information Systems"
+                />
+              </label>
+
+              <label class="input-group" for="studentSemester">
+                <span>Semester</span>
+                <select id="studentSemester" class="input-field">
+                  <option value="1">Semester 1</option>
+                  <option value="2">Semester 2</option>
+                  <option value="3">Semester 3</option>
+                  <option value="4">Semester 4</option>
+                  <option value="5">Semester 5</option>
+                  <option value="6">Semester 6</option>
+                  <option value="7">Semester 7</option>
+                  <option value="8">Semester 8</option>
+                </select>
+              </label>
+
+              <div class="form-actions">
+                <button class="primary-button form-button" type="submit">
+                  Save Dashboard
+                </button>
+                <p id="dashboardStatus" class="helper-text">
+                  Your profile will stay saved in this browser.
+                </p>
+              </div>
+            </form>
+          </article>
+
+          <article class="card dashboard-summary-card">
+            <div id="dashboardSummary" class="dashboard-summary" aria-live="polite"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Why I built this -->
+      <section id="why-built" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Project Story</p>
+          <h2>Why I Built NextStep</h2>
+          <p>
+            A personal project story that explains the motivation behind the
+            product and the kind of student challenge it was designed to solve.
+          </p>
+        </div>
+
+        <div class="story-layout">
+          <article class="card story-card story-card--feature">
+            <p class="panel-label">Personal Inspiration</p>
+            <h3>Built from a real student experience</h3>
+            <p>
+              This project was inspired by my experience as an Information
+              Systems student who often felt uncertain about career direction,
+              portfolio preparation, competitions, and internship readiness.
+            </p>
+            <p>
+              NextStep was designed to help students transform uncertainty into
+              actionable growth plans through structured guidance and practical
+              preparation.
+            </p>
+          </article>
+
+          <div class="story-stack">
+            <article class="card story-card">
+              <p class="panel-label">What Needed to Change</p>
+              <h3>Less confusion, more clarity</h3>
+              <p>
+                Many students do not need more generic advice. They need a
+                clearer way to connect their semester, interests, and portfolio
+                preparation into concrete next steps.
+              </p>
+            </article>
+
+            <article class="card story-card">
+              <p class="panel-label">What NextStep Offers</p>
+              <h3>Guidance that feels actionable</h3>
+              <p>
+                The experience brings together career exploration, saved
+                progress, roadmap guidance, and practical preparation in one
+                student-focused planner.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About this project -->
+      <section id="about-project" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio Overview</p>
+          <h2>About This Project</h2>
+          <p>
+            A concise overview of the problem space, the product direction, the
+            role behind the build, and the technologies used.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="card about-card">
+            <p class="panel-label">Problem</p>
+            <h3>Students need clearer direction</h3>
+            <p>
+              Many students struggle to determine career direction, prepare
+              portfolios, and understand what skills to focus on.
+            </p>
+          </article>
+
+          <article class="card about-card">
+            <p class="panel-label">Solution</p>
+            <h3>Turn uncertainty into action</h3>
+            <p>
+              NextStep helps students turn uncertainty into clear action plans
+              using career exploration, semester-based roadmaps, portfolio
+              checklists, and guided assistance.
+            </p>
+          </article>
+
+          <article class="card about-card">
+            <p class="panel-label">My Role</p>
+            <h3>Product and front-end execution</h3>
+            <ul class="about-list">
+              <li>Product Designer</li>
+              <li>Front-End Developer</li>
+              <li>Problem Solver</li>
+            </ul>
+          </article>
+
+          <article class="card about-card">
+            <p class="panel-label">Technologies</p>
+            <h3>Simple tools, thoughtful experience</h3>
+            <ul class="about-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>localStorage</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Personalized action plan -->
+      <section id="action-plan" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Personalized Action Plan</p>
+          <h2>Follow a semester-based plan that feels manageable</h2>
+          <p>
+            Your action plan updates based on your semester so you can focus on
+            the right type of progress at the right time.
+          </p>
+        </div>
+
+        <div id="actionPlanGrid" class="timeline-grid" aria-live="polite"></div>
+      </section>
+
+      <!-- Career assessment -->
+      <section id="assessment" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Career Assessment</p>
+          <h2>Answer five quick questions to discover a strong direction</h2>
+          <p>
+            Rate each statement from 1 to 5. The top score becomes your current
+            recommendation and can jump you straight into the matching roadmap.
+          </p>
+        </div>
+
+        <div class="assessment-layout">
+          <article class="card assessment-card">
+            <div class="assessment-intro">
+              <p class="panel-label">Simple self-check</p>
+              <h3>What kind of work feels most exciting to you?</h3>
+              <p>
+                Use 1 for "not really me" and 5 for "this sounds a lot like
+                me." Your answers are saved so you can revisit them later.
+              </p>
+            </div>
+
+            <form id="assessmentForm" class="assessment-form">
+              <div id="assessmentQuestions" class="assessment-questions"></div>
+              <button class="primary-button assessment-button" type="submit">
+                Get Recommendation
+              </button>
+            </form>
+          </article>
+
+          <aside id="assessmentResult" class="card assessment-result" aria-live="polite"></aside>
+        </div>
+      </section>
+
+      <!-- Career explorer -->
+      <section id="explorer" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Career Explorer</p>
+          <h2>Search, compare, and bookmark the paths that stand out</h2>
+          <p>
+            Filter careers instantly, save favorites, and click any card to load
+            the related roadmap, tools, and portfolio idea.
+          </p>
+        </div>
+
+        <div class="explorer-toolbar card">
+          <label class="search-field" for="careerSearch">
+            <span>Search career paths</span>
+            <input
+              id="careerSearch"
+              class="input-field search-input"
+              type="search"
+              placeholder="Search UI/UX Designer, Software Developer, Data Analyst..."
+            />
+          </label>
+
+          <div class="toolbar-actions">
+            <button id="clearCareerSearch" class="ghost-button" type="button">
+              Clear
+            </button>
+            <span id="careerSearchStatus" class="results-pill">5 careers shown</span>
+          </div>
+        </div>
+
+        <div class="explorer-layout">
+          <div id="careerCardGrid" class="career-grid" aria-label="Career path cards"></div>
+
+          <article class="career-detail card" aria-live="polite">
+            <div class="detail-header">
+              <span id="detailBadge" class="detail-badge"></span>
+              <h3 id="detailTitle">Select a career</h3>
+            </div>
+            <p id="detailDescription" class="detail-description">
+              Your selected career path will appear here.
+            </p>
+
+            <div class="detail-columns">
+              <div class="detail-group">
+                <h4>Recommended Skills</h4>
+                <ul id="detailSkills" class="pill-list"></ul>
+              </div>
+              <div class="detail-group">
+                <h4>Recommended Tools</h4>
+                <ul id="detailTools" class="pill-list"></ul>
+              </div>
+            </div>
+
+            <div class="detail-group">
+              <h4>Suggested Portfolio Project</h4>
+              <p id="detailProject"></p>
+            </div>
+
+            <div class="detail-group">
+              <h4>Skill Roadmap</h4>
+              <ol id="detailRoadmap" class="roadmap-list"></ol>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Favorite careers -->
+      <section id="favorites" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">My Favorite Careers</p>
+          <h2>Keep your most interesting options close</h2>
+          <p>
+            Bookmark careers from the explorer and this section will collect
+            them into a focused shortlist you can revisit anytime.
+          </p>
+        </div>
+
+        <div class="favorites-meta">
+          <span id="favoritesCount" class="results-pill">0 saved</span>
+        </div>
+
+        <div id="favoriteCareerGrid" class="favorite-grid" aria-live="polite"></div>
+      </section>
+
+      <!-- Portfolio checklist -->
+      <section id="checklist" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio Checklist</p>
+          <h2>Track preparation and unlock visible progress</h2>
+          <p>
+            Check items off as you complete them. The app saves your progress
+            and unlocks achievement badges as your readiness grows.
+          </p>
+        </div>
+
+        <div class="checklist-layout">
+          <article class="card checklist-card">
+            <div class="progress-header">
+              <div>
+                <h3>Application Readiness</h3>
+                <p>Small consistent steps can build real confidence.</p>
+              </div>
+              <div class="progress-badge">
+                <span id="progressValue">0%</span>
+              </div>
+            </div>
+
+            <div class="progress-track" aria-hidden="true">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <ul id="checklistItems" class="checklist-items"></ul>
+          </article>
+
+          <div class="checklist-side-stack">
+            <aside class="card checklist-note">
+              <p class="panel-label">Helpful reminder</p>
+              <h3>You do not need to finish everything at once.</h3>
+              <p>
+                Start with one visible output, such as your CV or portfolio, and
+                improve the rest week by week. Progress matters more than
+                perfection.
+              </p>
+            </aside>
+
+            <aside class="card badge-card">
+              <p class="panel-label">Achievement Badges</p>
+              <h3>Celebrate the progress you are making</h3>
+              <div id="badgeGrid" class="badge-grid"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal notes -->
+      <section id="notes" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Personal Notes</p>
+          <h2>Save reminders for deadlines, projects, and applications</h2>
+          <p>
+            Keep quick notes inside the planner so your next important step is
+            always easy to find and update.
+          </p>
+        </div>
+
+        <div class="notes-layout">
+          <article class="card notes-editor">
+            <form id="notesForm" class="notes-form">
+              <label class="notes-label" for="notesInput">Write your notes</label>
+              <textarea
+                id="notesInput"
+                class="notes-area"
+                rows="10"
+                placeholder="Build portfolio before June&#10;Prepare Apple Developer Academy application"
+              ></textarea>
+
+              <div class="form-actions">
+                <button class="primary-button form-button" type="submit">
+                  Save Notes
+                </button>
+                <p id="notesStatus" class="helper-text">
+                  Your notes are saved in this browser.
+                </p>
+              </div>
+            </form>
+          </article>
+
+          <aside class="card notes-preview">
+            <p class="panel-label">Saved note preview</p>
+            <h3>What you are keeping in focus</h3>
+            <div id="notesPreview" class="notes-preview-content"></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Assistant -->
+      <section id="assistant" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Guided Career Assistant Simulation</p>
+          <h2>Build a conversation history from practical student questions</h2>
+          <p>
+            Pick questions from the list and NextStep will add each exchange to
+            a saved conversation history using predefined responses.
+          </p>
+          <p class="section-note">
+            This assistant uses predefined responses and is designed as a
+            simulation for learning and guidance purposes.
+          </p>
+        </div>
+
+        <div class="assistant-layout">
+          <article class="card assistant-chat-card">
+            <div class="assistant-card-header">
+              <div>
+                <p class="panel-label">Conversation</p>
+                <h3>Saved guidance you can revisit</h3>
+              </div>
+              <button id="clearAssistantHistory" class="ghost-button" type="button">
+                Clear Chat
+              </button>
+            </div>
+
+            <div id="assistantHistory" class="assistant-history" aria-live="polite"></div>
+          </article>
+
+          <aside class="card assistant-questions-card">
+            <p class="panel-label">Prompt Library</p>
+            <h3>Choose a question to continue the chat</h3>
+            <p class="card-copy">
+              You can ask multiple questions in a row. Every answer stays inside
+              the conversation history until you clear it.
+            </p>
+            <div id="assistantQuestions" class="question-list"></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Opportunities -->
+      <section id="opportunities" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Opportunities</p>
+          <h2>Practice preparing for real applications and programs</h2>
+          <p>
+            Explore sample opportunities and use them as preparation targets for
+            your portfolio, interviews, and application materials.
+          </p>
+        </div>
+
+        <div id="opportunityGrid" class="opportunity-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>NextStep | Student Growth Planner</p>
+      <p>Your Personalized Student Growth Planner</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
